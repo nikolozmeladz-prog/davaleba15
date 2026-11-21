@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+</head>
+<body>
+
+    <h1>Movies and Viewers</h1>
+
+    <h2>1. Exact</h2>
+    {% for movie in movie_exact %}
+        <p>{{ movie.title }} - {{ movie.genre }} - {{ movie.duration_minutes }} - {{ movie.rating }}</p>
+    {% endfor %}
+
+    <h2>2. Contains</h2>
+    {% for viewer in viewers_contains_lastname %}
+        <p>{{ viewer.first_name }} {{ viewer.last_name }} - {{ viewer.email }}</p>
+    {% endfor %}
+
+    <h2>3. Startswith</h2>
+    {% for movie in genre_starts %}
+        <p>{{ movie.title }}</p>
+    {% endfor %}
+
+    <h2>4. Endswith</h2>
+    {% for viewer in email_ends %}
+        <p>{{ viewer.first_name }} {{ viewer.last_name }} - {{ viewer.email }}</p>
+    {% endfor %}
+
+    <h2>5. GT</h2>
+    {% for movie in long_movies %}
+        <p>{{ movie.title }} - {{ movie.duration_minutes }}</p>
+    {% endfor %}
+
+    <h2>6. GTE</h2>
+    {% for review in high_score_reviews %}
+        <p>{{ review.movie.title }} - {{ review.viewer.first_name }} - {{ review.score }}</p>
+    {% endfor %}
+
+    <h2>7. LT</h2>
+    {% for movie in low_rating_movies %}
+        <p>{{ movie.title }} - {{ movie.rating }}</p>
+    {% endfor %}
+
+    <h2>8. LTE</h2>
+    {% for viewer in young_viewers %}
+        <p>{{ viewer.first_name }} - {{ viewer.age }}</p>
+    {% endfor %}
+
+    <h2>9. Range</h2>
+    {% for movie in medium_length_movies %}
+        <p>{{ movie.title }} - {{ movie.duration_minutes }}</p>
+    {% endfor %}
+
+    <h2>10. IN</h2>
+    {% for movie in movies_in_list %}
+        <p>{{ movie.title }}</p>
+    {% endfor %}
+
+    <h2>11. Is Null</h2>
+    {% for review in reviews_without_viewer %}
+        <p>{{ review.movie.title }} - {{ review.score }}</p>
+    {% endfor %}
+
+</body>
+</html>
